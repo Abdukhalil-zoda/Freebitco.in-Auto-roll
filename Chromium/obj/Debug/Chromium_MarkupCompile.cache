@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\Chromium\Chromium\obj\Release\
+D:\Chromium\Chromium\obj\Debug\
 Chromium
 none
 false
-TRACE
+DEBUG;TRACE
 D:\Chromium\Chromium\App.xaml
-1219584333
+11151548125
 
-6365332297
-20-607743272
+6902898031
+20-998553928
 MainWindow.xaml;
 
 False

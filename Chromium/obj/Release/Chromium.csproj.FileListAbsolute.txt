@@ -79,12 +79,16 @@ D:\Chromium\Chromium\bin\Release\Chromium.pdb
 D:\Chromium\Chromium\bin\Release\CefSharp.Core.dll
 D:\Chromium\Chromium\bin\Release\CefSharp.dll
 D:\Chromium\Chromium\bin\Release\CefSharp.Wpf.dll
+D:\Chromium\Chromium\bin\Release\Newtonsoft.Json.dll
+D:\Chromium\Chromium\bin\Release\Telegram.Bot.dll
 D:\Chromium\Chromium\bin\Release\CefSharp.pdb
 D:\Chromium\Chromium\bin\Release\CefSharp.xml
 D:\Chromium\Chromium\bin\Release\CefSharp.Core.pdb
 D:\Chromium\Chromium\bin\Release\CefSharp.Core.xml
 D:\Chromium\Chromium\bin\Release\CefSharp.Wpf.pdb
 D:\Chromium\Chromium\bin\Release\CefSharp.Wpf.xml
+D:\Chromium\Chromium\bin\Release\Newtonsoft.Json.xml
+D:\Chromium\Chromium\bin\Release\Telegram.Bot.xml
 D:\Chromium\Chromium\obj\Release\Chromium.csproj.AssemblyReference.cache
 D:\Chromium\Chromium\obj\Release\MainWindow.g.cs
 D:\Chromium\Chromium\obj\Release\App.g.cs

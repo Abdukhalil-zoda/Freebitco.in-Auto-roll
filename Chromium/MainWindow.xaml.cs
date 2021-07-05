@@ -1,18 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Threading;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using CefSharp;
 using CefSharp.Wpf;
 using System.IO;
@@ -27,11 +14,21 @@ namespace Chromium
         /// <summary>
         /// Бот для управление
         /// </summary>
-        static TGBot bot = new TGBot("API");
+        static TGBot bot;
         public MainWindow()
         {
+            var api = File.Exists("api.txt");
+            if (!api)
+            {
+                MessageBox.Show("\"api.txt\" not found Telegram bot function disabled", "Warning");
+            }
+            if (api)
+            {
+                bot = new TGBot(File.ReadAllText("api.txt"));
+                bot.Start();
+                bot.OnStart += Bot_OnStart;
+            }
             InitializeComponent();
-            
         }
         /// <summary>
         /// Основной браузер
@@ -45,7 +42,7 @@ namespace Chromium
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             
-            bot.Start();
+            
             CefSettings settings = new CefSettings();
             settings.LogSeverity = LogSeverity.Verbose;
             settings.CachePath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "CefSharp\\Cache");
@@ -55,7 +52,7 @@ namespace Chromium
             ni.Icon = new System.Drawing.Icon("./favicon.ico");
             ni.Visible = true;
 
-            bot.OnStart += Bot_OnStart;
+            
             chrome.FrameLoadEnd += Chrome_FrameLoadEnd;
             ni.DoubleClick += delegate (object sender1, EventArgs args)
             {
