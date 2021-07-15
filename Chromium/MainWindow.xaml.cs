@@ -88,6 +88,8 @@ namespace Chromium
 
                 if (response.Success && response.Result != null && check)
                 {
+                    var cmd = "RedeemRPProduct('free_points_100')";
+                    
                     var id = "play_without_captchas_button";
                     var s = string.Format($"document.getElementById('{id}').style.display;");
                     chrome.EvaluateScriptAsync(script).ContinueWith(xx =>
@@ -104,6 +106,7 @@ namespace Chromium
                     var resultres = Convert.ToString(response.Result);
                     if (resultres != "none")
                     {
+                        chrome.EvaluateScriptAsync(cmd).Wait();
                         chrome.EvaluateScriptAsync("document.getElementById('free_play_form_button').click();").Wait();
                     }
                     else
